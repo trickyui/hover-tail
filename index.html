@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #wrapper {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .box {
+            width: 26px;
+            height: 26px;
+            float: left;
+            background: transparent;
+            transition: 1s ease-in-out;
+        }
+
+        .box:hover {
+            transition: 0s ease-in-out;
+        }
+
+        .box:hover:nth-child(4n + 1) {
+            background: #c70d3a;
+        }
+
+        .box:hover:nth-child(4n + 2) {
+            background: #ed5107;
+        }
+
+        .box:hover:nth-child(4n + 3) {
+            background: #230338;
+        }
+
+        .box:hover:nth-child(4n + 4) {
+            background: #02383c;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrapper"></div>
+    <script>
+        for (var i = 1; i <= 3000; i++) {
+            let box = document.createElement('DIV')
+            box.className += 'box';
+            document.getElementById('wrapper').appendChild(box);
+        }
+    </script>
+</body>
+
+</html>
